@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href = "bai1.css">
+    <title>Họ tên - MãSV</title>
+</head>
+<body>
+    <div class="container">
+        <h2>THÔNG TIN SINH VIÊN</h2>
+        <p><span>Họ và tên:</span> <span id="ht"></span></p>
+        <p><span>Năm sinh:</span> <span id="ns"></span></p>
+        <p><span>Tuổi:</span> <span id="t"></span></p>
+    </div>
+    
+    <script>
+        function tinhTuoi(namSinh) {
+            var t = new Date();
+            var n = t.getFullYear();
+            return n - namSinh;
+        }
+
+        var ht = prompt("Bạn tên gì?:");        
+        var ns = prompt("Bạn sinh năm nào:");
+        var t = tinhTuoi(ns);
+       
+        if (ns < 1900 || ns > 2023) {
+            alert("Năm sinh không hợp lệ. Vui lòng nhập lại.");
+        } else {
+            var tuoi = tinhTuoi(ns);
+            document.getElementById("ht").innerHTML = ht;
+            document.getElementById("ns").innerHTML = ns;
+            document.getElementById("t").innerHTML = t;
+        }
+    </script>
+</body>
+</html>
