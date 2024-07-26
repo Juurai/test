@@ -1,0 +1,13 @@
+.container {
+    background-color: #87CEEB; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 50%;
+    margin: 40px auto;
+  }
+  
+  .container p {
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
