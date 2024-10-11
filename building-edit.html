@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>Thông tin tòa nhà</title>
+
+	<meta name="description" content="overview &amp; stats" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+	<!-- bootstrap & fontawesome -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/font-awesome/4.2.0/css/font-awesome.min.css" />
+
+	<!-- page specific plugin styles -->
+
+	<!-- text fonts -->
+	<link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
+
+	<!-- ace styles -->
+	<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+	<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+		<![endif]-->
+
+	<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+	<!-- inline styles related to this page -->
+
+	<!-- ace settings handler -->
+	<script src="assets/js/ace-extra.min.js"></script>
+
+	<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+	<!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body class="no-skin">
+	<div id="navbar" class="navbar navbar-default">
+		<script type="text/javascript">
+			try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+		</script>
+
+		<div class="navbar-container" id="navbar-container">
+			<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+				<span class="sr-only">Toggle sidebar</span>
+
+				<span class="icon-bar"></span>
+
+				<span class="icon-bar"></span>
+
+				<span class="icon-bar"></span>
+			</button>
+
+			<div class="navbar-header pull-left">
+				<a href="" class="navbar-brand">
+					<small>
+						<i class="fa fa-leaf"></i>
+						Ace Admin
+					</small>
+				</a>
+			</div>
+		</div><!-- /.navbar-container -->
+	</div>
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+			try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+		</script>
+
+		<div id="sidebar" class="sidebar                  responsive">
+			<script type="text/javascript">
+				try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+			</script>
+			<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+				<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left"
+					data-icon2="ace-icon fa fa-angle-double-right"></i>
+			</div>
+
+			<script type="text/javascript">
+				try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+			</script>
+		</div>
+
+		<div class="main-content">
+			<div class="main-content-inner">
+				<div class="breadcrumbs" id="breadcrumbs">
+					<script type="text/javascript">
+						try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+					</script>
+
+					<ul class="breadcrumb">
+						<li>
+							<i class="ace-icon fa fa-home home-icon"></i>
+							<a href="#">Home</a>
+						</li>
+						<li class="active">Dashboard</li>
+					</ul><!-- /.breadcrumb -->
+				</div>
+
+				<div class="page-content">
+					<div class="page-header">
+						<h1>
+							Thông tin tòa nhà
+						</h1>
+					</div><!-- /.page-header -->
+
+				</div><!-- /.page-content -->
+				<div class="row">
+					<div class="col-xs-12">
+						<form class="form-horizontal" id="form-edit">
+							<div class="form-group">
+								<label class="col-xs-3">Tên tòa nhà</label>
+								<div class="col-xs-9">
+									<input type="text" name="buildingName" id="name" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Quận</label>
+								<div class="col-xs-3">
+									<select class="form-control" name="districtId" id="districtId">
+										<option value="">---Chọn Quận---</option>
+										<option value="1">Quận 1</option>
+										<option value="2">Quận 3</option>
+										<option value="3">Quận 11</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Phường</label>
+								<div class="col-xs-9">
+									<input type="text" name="ward" id="ward" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Đường</label>
+								<div class="col-xs-9">
+									<input type="text" name="street" id="street" class="form-control">
+								</div>
+							</div>
+							<!-- <div class="form-group">
+								<label class="col-xs-3">Kết cấu</label>
+								<div class="col-xs-9">
+									<input type="number" name="" id="" class="form-control">
+								</div>
+							</div> -->
+							<div class="form-group">
+								<label class="col-xs-3">Số tầng hầm</label>
+								<div class="col-xs-9">
+									<input type="number" name="numberOfBasement" id="numberOfBasement" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Diện tích sàn</label>
+								<div class="col-xs-9">
+									<input type="text" name="floorArea" id="floorArea" class="form-control">
+								</div>
+							</div>
+							<!-- <div class="form-group">
+								<label class="col-xs-3">Hướng</label>
+								<div class="col-xs-9">
+									<input type="text" name="direction" id="direction" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Hạng</label>
+								<div class="col-xs-9">
+									<input type="text" name="rank" id="rank" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Diện tích thuê</label>
+								<div class="col-xs-9">
+									<input type="number" name="rentArea" id="rentArea" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Giá thuê</label>
+								<div class="col-xs-9">
+									<input type="number" name="rentPrice" id="rentPrice" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Mô tả giá</label>
+								<div class="col-xs-9">
+									<input type="text" name="name" id="name" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Phí dịch vụ</label>
+								<div class="col-xs-9">
+									<input type="number" name="name" id="name" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Phí ô tô</label>
+								<div class="col-xs-9">
+									<input type="number" name="name" id="name" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Phí mô tô</label>
+								<div class="col-xs-9">
+									<input type="number" name="name" id="name" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Phí ngoài giờ</label>
+								<div class="col-xs-9">
+									<input type="number" name="name" id="name" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Tiền điện</label>
+								<div class="col-xs-9">
+									<input type="number" name="electricBill" id="electricBill" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Đặt cọc</label>
+								<div class="col-xs-9">
+									<input type="number" name="name" id="name" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Thanh toán</label>
+								<div class="col-xs-9">
+									<input type="number" name="name" id="name" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Thời hạn thuê</label>
+								<div class="col-xs-9">
+									<input type="number" name="name" id="name" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Thời gian trang trí</label>
+								<div class="col-xs-9">
+									<input type="number" name="name" id="name" class="form-control">
+								</div>
+							</div> -->
+							<div class="form-group">
+								<label class="col-xs-3">Tên quản lý</label>
+								<div class="col-xs-9">
+									<input type="text" name="managerName" id="managerName" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">SĐT quản lý</label>
+								<div class="col-xs-9">
+									<input type="text" name="managerPhone" id="managerPhone" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Phí môi giới</label>
+								<div class="col-xs-9">
+									<input type="number" name="name" id="" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Loại tòa nhà</label>
+								<div class="col-xs-9">
+									<input type="text" name="name" id="" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3">Ghi chú</label>
+								<div class="col-xs-9">
+									<input type="checkbox" name="typeCode" id="typeCode" value="noi-that">Nội thất
+									<input type="checkbox" name="typeCode" id="typeCode" value="nguyen-can"> Tầng trệt
+									<input type="checkbox" name="typeCode" id="typeCode" value="tang-tret">Nguyên căn
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-3"></label>
+								<div class="col-xs-9">
+									<button type="button" class="btn btn-primary" id="btnAddBuilding">Thêm tòa nhà</button>
+									<button type="button" class="btn btn-inverse">Hủy thao tác</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- /.main-content -->
+
+	<div class="footer">
+		<div class="footer-inner">
+			<div class="footer-content">
+				<span class="bigger-120">
+					<span class="blue bolder">Ace</span>
+					Application &copy; 2013-2014
+				</span>
+
+				&nbsp; &nbsp;
+				<span class="action-buttons">
+					<a href="#">
+						<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+					</a>
+
+					<a href="#">
+						<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+					</a>
+
+					<a href="#">
+						<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+					</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+		<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+	</a>
+	</div><!-- /.main-container -->
+
+	<!-- basic scripts -->
+
+	<!--[if !IE]> -->
+	<script src="assets/js/jquery.2.1.1.min.js"></script>
+
+	<script>
+		$('#btnAddBuilding').click(function(){
+			var formData = $("#form-edit").serializeArray();
+			var json = {};
+			var typeCode = [];
+			$.each(formData, function(i,v){
+				if(v.name == 'typeCode'){
+					typeCode.push(v.value);
+				}
+				else json["" + v.name + ""] = v.value;
+			});
+			json['typeCode'] = typeCode;
+			if(typeCode.length == 0){
+				alert("Typecode khong empty!")
+			}
+			else{
+				 btnAddBuilding(json);
+			}
+			btnAddBuilding(json);
+		});
+
+		function btnAddBuilding(json){
+			$.ajax({
+					url: "http://localhost:8081/api/buildings",
+					type:"GET",
+					data:"json",
+					contentType:"application/json",
+					success: function(result){
+						console.log("success");
+						alert(result.message);
+					},
+					error : function(result){
+						console.log("sucess");
+						alert(result.message);
+					}
+			});
+		}
+
+	</script>
+
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+<script src="assets/js/jquery.1.11.1.min.js"></script>
+<![endif]-->
+
+	<!--[if !IE]> -->
+	<script type="text/javascript">
+		window.jQuery || document.write("<script src='assets/js/jquery.min.js'>" + "<" + "/script>");
+	</script>
+
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+	<script type="text/javascript">
+		if ('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+	</script>
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<!-- page specific plugin scripts -->
+
+	<!--[if lte IE 8]>
+		  <script src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+	<script src="assets/js/jquery-ui.custom.min.js"></script>
+	<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="assets/js/jquery.easypiechart.min.js"></script>
+	<script src="assets/js/jquery.sparkline.min.js"></script>
+	<script src="assets/js/jquery.flot.min.js"></script>
+	<script src="assets/js/jquery.flot.pie.min.js"></script>
+	<script src="assets/js/jquery.flot.resize.min.js"></script>
+
+	<!-- ace scripts -->
+	<script src="assets/js/ace-elements.min.js"></script>
+	<script src="assets/js/ace.min.js"></script>
+
+	<!-- inline scripts related to this page -->
+</body>
+
+</html>
